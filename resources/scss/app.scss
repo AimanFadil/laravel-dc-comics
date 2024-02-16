@@ -1,1 +1,138 @@
 @import '~bootstrap/scss/bootstrap';
+
+header {
+    .cont-sm {
+        background-color: rgba(2, 130, 249, 255);
+        color: white;
+
+        .cont-header-sm {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+    }
+
+    .cont-header-lg {
+        display: flex;
+
+        ul {
+            list-style-type: none;
+            line-height: 80px;
+
+        }
+
+        .lh-80 {
+            line-height: 80px;
+        }
+    }
+
+    .jumbo {
+        height: 400px;
+        background-image: url('../img/jumbotron.jpg');
+
+    }
+}
+
+
+footer {
+    .top-footer {
+        background-color: rgba(2, 130, 249, 255);
+        color: white;
+
+        .cont-top-footer {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            line-height: 20px;
+            align-items: center;
+
+            img {
+                width: 60px;
+            }
+        }
+    }
+
+    .mid-footer {
+        background-image: url('../img/footer-bg.jpg');
+        height: 400px;
+        padding: 20px;
+
+        .cont-mid-footer {
+            display: flex;
+
+            img {
+                width: 85%;
+            }
+
+
+            ul {
+                list-style-type: none;
+                padding: 20px;
+            }
+        }
+    }
+
+    .bot-footer {
+        background-color: rgba(48, 48, 48, 255);
+        height: 75px;
+        padding: 15px;
+
+        .cont-bot-footer {
+
+            display: flex;
+            justify-content: space-between;
+
+            .sign-btn {
+                border: rgba(2, 130, 249, 255) solid;
+                color: white;
+
+            }
+
+
+        }
+    }
+}
+
+.main {
+    background-color: rgba(28, 28, 28, 255);
+
+    .bottone {
+        width: 200px;
+
+    }
+
+    .btn-blue {
+        border: rgba(2, 130, 249, 255) solid;
+        color: white;
+        background-color: rgba(2, 130, 249, 255);
+    }
+
+    .mid {
+        display: flex;
+
+
+
+    }
+
+    .cont-main {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        img {
+            width: 150px;
+            height: 180px;
+        }
+
+    }
+
+}
+
+.cont {
+    background-color: rgba(28, 28, 28, 255);
+
+    img {
+        width: 80%;
+        padding: 20px;
+    }
+}
