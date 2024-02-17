@@ -1,4 +1,4 @@
-@extends('layout.yield')
+@extends('layout.yeild')
 @section('single')
     <div class="cont">
         <div class="container">
@@ -17,7 +17,7 @@
                     <p class="text-white">{{ $comic['sale_date'] }}</p>
                 </div>
                 <div class="col-1 p-5">
-                    <a href="{{ route('home') }}">
+                    <a href="">
                         <button class="btn btn-primary">HOME</button>
                     </a>
 
