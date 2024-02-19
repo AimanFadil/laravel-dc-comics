@@ -7,7 +7,7 @@
             <div class="col-12">
                 <div class="form-container">
                     <h3>MODIFICA IL COMIC</h3>
-                    <form action="{{ route('comics.store') }}" method="post">
+                    <form action="{{ route('comics.update', $comics->id) }}" method="post">
                         @csrf
                         @method('PUT')
                         <div class="form-group my-3">

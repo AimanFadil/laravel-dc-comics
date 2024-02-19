@@ -88,7 +88,7 @@ class ComicController extends Controller
     {
         $form_data = $request->all();
 
-        $comic = Comic::find();
+        $comic = Comic::find($id);
         $comic->title = $form_data['title'];
         $comic->description = $form_data['description'];
         $comic->thumb = $form_data['thumb'];
