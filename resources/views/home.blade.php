@@ -25,7 +25,9 @@
             </div>
         </div>
         <div class=" d-flex bottone text-center">
-            <h4 class="btn-blue">LOAD MORE</h4>
+            <a href="{{ route('comics.create') }}">
+                <h4 class="btn-blue">LOAD MORE</h4>
+            </a>
         </div>
     </div>
     </main>
