@@ -20,7 +20,11 @@
                     <a href="{{ route('comics.index') }}">
                         <button class="btn btn-primary">HOME</button>
                     </a>
-
+                </div>
+                <div class="col-1 p-5">
+                    <a href="{{ route('comics.edit', ['comic' => $comics->id]) }}">
+                        <button class="btn btn-danger">EDIT</button>
+                    </a>
                 </div>
             </div>
         </div>

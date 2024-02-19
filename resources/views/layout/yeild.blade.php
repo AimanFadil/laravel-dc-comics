@@ -20,6 +20,7 @@
     @yield('main')
     @yield('single')
     @yield('create')
+    @yield('edit')
     @include('partials.footer')
 </body>
 
