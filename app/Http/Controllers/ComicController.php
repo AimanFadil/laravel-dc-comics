@@ -108,8 +108,12 @@ class ComicController extends Controller
      * @param  \App\Models\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Comic $comic)
+    public function destroy($id)
     {
-        //
+        $comics = Comic::find($id);
+
+        $comics->delete();
+
+        return redirect()->route('comics.index');
     }
 }

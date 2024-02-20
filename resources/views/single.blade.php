@@ -26,6 +26,13 @@
                         <button class="btn btn-danger">EDIT</button>
                     </a>
                 </div>
+                <div class="col-1 p-5">
+                    <form action="{{ route('comics.destroy', ['comic' => $comics->id]) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-secondary">DELETE</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
