@@ -27,7 +27,8 @@
                     </a>
                 </div>
                 <div class="col-1 p-5">
-                    <form action="{{ route('comics.destroy', ['comic' => $comics->id]) }}" method="post">
+                    <form action="{{ route('comics.destroy', ['comic' => $comics->id]) }}" method="post"
+                        onsubmit="return confirm('Confermi di voler eliminare questo comic')">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-secondary">DELETE</button>
