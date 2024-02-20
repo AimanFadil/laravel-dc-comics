@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comic;
 use Illuminate\Http\Request;
+use Illuminate\Support\facades\Validator;
 
 class ComicController extends Controller
 {
@@ -37,7 +38,7 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        $form_data = $request->all();
+        $form_data = $this->validation($request->all());
 
         $comic = new Comic();
         /* $comic->title = $form_data['title'];
@@ -88,7 +89,8 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $form_data = $request->all();
+
+        $form_data = $this->validation($request->all());
 
         $comic = Comic::find($id);
         /*  $comic->title = $form_data['title'];
@@ -117,5 +119,37 @@ class ComicController extends Controller
         $comics->delete();
 
         return redirect()->route('comics.index');
+    }
+
+    private function validation($data)
+    {
+
+        $validator = Validator::make(
+            $data,
+            [
+                'title' => 'required|max:60',
+                'description' => 'required|',
+                'thumb' => 'required|',
+                'price' => 'required|max:20',
+                'series' => 'required|max:50',
+                'sale_date' => 'required|',
+                'type' => 'required|max:20'
+            ],
+            [
+                'title.required' => 'Il titolo è obbligatorio',
+                'title.max' => 'Il titolo non può superare i 60 caratteri',
+                'description.required' => 'la descrizione è obbligatoria',
+                'thumb.required' => 'SRC è obbligatoriO',
+                'price.required' => 'Il prezzo è obbligatorio',
+                'price.max' => 'Il prezzo non può superare i 20 caratteri',
+                'series.required' => 'la serie è obbligatoria',
+                'series.max' => 'la serie non può superare i 50 caratteri',
+                'sale_date.required' => 'la data è obbligatoria',
+                'type.required' => 'il tipo è obbligatorio',
+                'type.max' => 'il tipo non può superare i 20 caratteri',
+            ]
+        )->validate();
+
+        return $validator;
     }
 }
